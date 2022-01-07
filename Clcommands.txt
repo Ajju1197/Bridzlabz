@@ -1,0 +1,151 @@
+Command line interface (CLI) Gitbash:
+"~" is representing home.
+"ls" showing all folders.
+"ls -l" "long format" shorhand "ll" giving detail address
+"ls -a" showing hidden folder also.
+"ls .." previous folder details
+"ls ~ " homescreen
+creating a new folder "mkdir <foldername>"
+"history" last usage commands showing
+live location or current location "pwd"
+for nested folder "mkdir -p parent/child/subchild"
+romove folders "rm -rf parent/" means force delete
+creating a file command "touch foldername.java"
+for file content showing command "cat foldername.java"
+"cp -r foldername.java ../parent" copy the folders or files
+"mv ../child/subchild  ../parent" cut the folders or files
+
+"grep and pipe" filter the data find 
+cat data.csv | grep <content name>
+ls | grep foldername
+ls | grep -v/
+
+"echo good morning | awk '{print $0}'
+
+15 POOJA DEVELOPER 20000 2000 3000 25000 25000
+"cat data.csv | grep POOJA | awk '{print $2 " " $3 " " $8}'
+
+
+"cat data.csv | grep POOJA | awk '{total+=$8} END {print total}'.
+
+
+
+
+
+//////////////////////////////
+Algorithm :-
+step 1 :-
+        List only Java Files
+        Example : a.java b.java c.java
+        Done
+step 2 :-
+        find a 'Name' of that java-files
+        Example : a.java ===> a
+                  b.java ===> b
+                  c.java ===> c
+        Done
+step 3 :-
+        Create a folder with same name as a file-name
+        Example : a.java ===> a/
+                  b.java ===> b/
+                  c.java ===> c/
+        Done
+step 4 :-
+        copy a original file (a.java) & paste into a specific folder
+        Example : -
+        Done
+
+
+
+solution :-for item in `ls *.java`
+do
+    fn=`echo $item | awk -F. '{ print $1 }'`
+    if [ -d $fn ]
+    then
+        echo "Inside If Condition ..."
+        rm -rf $fn
+    fi
+    mkdir $fn
+    cp -r $item $fn
+done                      
+//////////////////////////////////////////////
+number=$((RANDOM%3))
+salary=0
+perHourCost=100
+logHoursAsFullTime=8
+logHoursAsPartTime=4
+isFulltime=2
+isParttime=1
+isAbsent=0
+
+                    if [ $number == $isFulltime ]
+                    then
+                         salary=$((perHourCost*logHoursAsFullTime))
+                         echo "Employee Joined As Full-Time Job"
+                         echo "Income Is $salary"
+                    elif [ $number == $isParttime ]
+                    then
+                         salary=$((perHourCost*logHoursAsPartTime))
+                         echo "Employee Joined As Part-Time Job"
+                         echo "Income Is $salary"
+                    else
+                         echo "Employee Absent"
+                         echo "Income Is $salary"
+                    fi
+
+/////////////////////////////////
+read -p "Enter Your Firstname here " firstname
+
+echo "Enter Your Lastname here"
+read lastname
+
+
+echo "My Full-Name Is $firstname$lastname"
+///////////////////////
+read -p "Enter Your Favourite Player In IPL " player
+
+case $player in
+   dhoni)
+      echo "He Is From CSK"
+      ;;
+   kohli)
+      echo "He Is From RCB"
+      ;;
+   rohit)
+      echo "He Is From MI"
+      ;;
+   williamson)
+      echo "He Is From SRH"
+      ;;
+   *)
+     echo "Invalid Input :( Please check again ..."
+     ;;
+esac
+
+///////////////////////////for item in `ls`
+do
+    extensionName=`echo $item | awk -F. '{ print $2 }'`
+    case $extensionName in
+      java)
+          echo "$item is a JAVA File"
+      ;;
+      py)
+          echo "$item is a PYTHON File"
+      ;;
+      sh)
+          echo "$item is a SHELLSCRIPT File"
+      ;;
+      *)
+      echo "Something went wrong ..."
+      ;;
+    esac
+done   
+
+
+
+
+
+
+
+
+
