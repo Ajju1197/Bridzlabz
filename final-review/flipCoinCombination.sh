@@ -1,5 +1,3 @@
-echo "------------------------------- Well come flip coin simulator ---------------------------"
-
 #DECLARE A DICTIONARY
 declare -A flipStore
 
