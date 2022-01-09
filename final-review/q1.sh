@@ -13,13 +13,12 @@ r3=$((c + a / b))
 r4=$((a % b + c))
 
 declare -A results
-
 results[c1]=$r1
 results[c2]=$r2
 results[c3]=$r3
 results[c4]=$r4
 
-echo "*********storing all computation values into dictionary***************"
+echo "<========storing all computation values into dictionary======>"
 echo "Dictionary Elements ===> " ${results[@]}
 
 echo "Creating an array"
